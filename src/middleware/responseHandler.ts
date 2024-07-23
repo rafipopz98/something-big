@@ -30,6 +30,16 @@ export const badRequest = (
   return res.status(statusCode).json({ status: false, message, error });
 };
 
+// Function to 500 bad request
+export const internalServerError = (
+  res: Response,
+  error: any,
+  message: string = "Internal Server",
+  statusCode: number = 500
+) => {
+  return res.status(statusCode).json({ status: false, message, error });
+};
+
 // Function to validation error
 export const validationError = (
   res: Response,
